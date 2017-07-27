@@ -30,3 +30,53 @@ Route::get('user/{name}',function ($name){
 	$a="john";
 	return 'nama : '.$a;
 });
+
+Route::get('/testmodel',function(){
+	$a=App\post::all();
+ 	return $a;
+
+ 	});
+
+Route::get('/testmodel1',function(){
+	$g=App\post::find(1);
+ 	return $g;
+ });
+
+Route::get('/testmodel2',function(){
+	$d=App\post::find(2);
+	$d->title = "ciri keluarga sakinah";
+	$d->save();
+ 	return $d;
+ });
+
+Route::get('/testmodel3',function(){
+	$c=App\post::where('title','like','%Tips Cepat Nikah%')->get();
+ 	return $c;
+ });
+
+
+
+
+Route::get('/testmodel5',function(){
+	$c = App\post;
+	$c->Title = "7 malam pembuka jodoh";
+	$c->Title = "sholat malam,sedekah,puasa sunnah,senyum,doa,taubat";
+	$c->save();
+	return $c;
+});
+
+route::get('/about',function () {
+	return view ('adams');
+
+});
+
+route::get('/cek',function () {
+	return view ('layouts.wellcome');
+
+});
+
+route::get('/nav',function () {
+	return view ('layouts.nav');
+
+});
+
