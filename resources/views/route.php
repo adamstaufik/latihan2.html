@@ -9,3 +9,4 @@ route::get('/about',function () {
 	.'Selamat Datang di Web saya <br>'
 	.'laravel . emang keren. ';
 });
+
